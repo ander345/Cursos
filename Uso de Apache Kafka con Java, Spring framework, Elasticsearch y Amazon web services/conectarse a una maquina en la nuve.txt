@@ -1,0 +1,10 @@
+conectarse a una maquina en la nuve de aws
+
+despues de crear la maquina en ec2 y descargar la key
+se le da permiso a esa llave 
+
+- chmod 400 nombre-llave.pem
+
+posterior nos conectamos
+
+ssh -i nombre-llave.pem ec2-user@nombre-del-servidor

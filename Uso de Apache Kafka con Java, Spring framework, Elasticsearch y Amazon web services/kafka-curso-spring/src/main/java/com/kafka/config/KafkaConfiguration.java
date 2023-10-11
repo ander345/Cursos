@@ -14,9 +14,16 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.MicrometerProducerListener;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.prometheus.PrometheusConfig;
+import io.micrometer.prometheus.PrometheusMeterRegistry;
 
 @Configuration
+@EnableScheduling // permite programar algo que se ejecute cada sierto tiempo
 public class KafkaConfiguration {
 	
 	private Map<String, Object> producerProps() {
@@ -61,9 +68,16 @@ public class KafkaConfiguration {
 	@Bean
 	public KafkaTemplate<String, String> createTemplate() {
 		Map<String, Object>senderProps= producerProps();
-		ProducerFactory<String, String> pf= new DefaultKafkaProducerFactory<String, String>(senderProps);
-		KafkaTemplate<String, String> template=new KafkaTemplate<>(pf);
+		ProducerFactory<String, String> producerFactory= new DefaultKafkaProducerFactory<String, String>(senderProps);
+		producerFactory.addListener(new	MicrometerProducerListener<String,String>(meterRegistry()));
+		KafkaTemplate<String, String> template=new KafkaTemplate<>(producerFactory);
 		return template;
+	}
+	
+	@Bean
+	public MeterRegistry meterRegistry() {
+		PrometheusMeterRegistry prometheusMeterRegistry=new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
+		return prometheusMeterRegistry;
 	}
 		
 }

@@ -11,14 +11,18 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.config.KafkaListenerEndpointRegistry;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
+import org.springframework.scheduling.annotation.Scheduled;
+
+import io.micrometer.core.instrument.MeterRegistry;
 
 @SpringBootApplication
-public class KafkaCursoSpringApplication implements CommandLineRunner{
+public class KafkaCursoSpringApplication { //implements CommandLineRunner{ // se agrrega para pruebas void run
 	
 	public static final Logger log = LoggerFactory.getLogger(KafkaCursoSpringApplication.class);
-
+	
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
 	
@@ -29,7 +33,7 @@ public class KafkaCursoSpringApplication implements CommandLineRunner{
 	}*/
 	
 	//para recibir multiples mensajes
-	@KafkaListener(topics ="devs4j-topic",containerFactory
+	@KafkaListener(id ="autoStartup", autoStartup ="true",topics ="devs4j-topic",containerFactory
 			="kafkaListenerContainerFactory", groupId ="consumer",
 			properties ={"max.poll.interval.ms:60000","max.poll.records:100"})
 	public void listen(List<String> messages) {
@@ -100,13 +104,54 @@ public class KafkaCursoSpringApplication implements CommandLineRunner{
 			//si no se entrega el mensaje despes de ese tiempo se genera una exception.
 	}*/
 	
-	//------ ejemplo 4 para envio de artos mensajes--------
+	//------ ejemplo 4 para envio de artos mensajes y pausar consumo --------
+	/*@Autowired
+	private KafkaListenerEndpointRegistry registry;
+	
+	
 	public void run(String...  args) throws Exception {
 		for(int i=0;i<100;i++) {
 			kafkaTemplate.send("devs4j-topic", String.format("sample message %d", i));
+			log.info("Waiting");
+			Thread.sleep(5000);
+			log.info("Start");
+			registry.getListenerContainer("autoStartup").start();
+			Thread.sleep(5000);
+			registry.getListenerContainer("autoStartup").stop();
 		}
 		
 		
-}
-
+	}*/
+	
+	//-------- ejemplo 5 metricas, probando primero @enablecheduler----------
+	/*@Scheduled(fixedDelay = 2000, initialDelay = 100) // est permite que este metodo se ejecute cada cierto tiempo
+	public void print() {
+		log.info("prueba");
+	}*/
+	
+	
+	//------- metricas
+	@Autowired
+	private MeterRegistry meterRegistry;
+	
+	@Scheduled(fixedDelay = 2000, initialDelay = 100)
+	public void schedule() {
+		log.info("Sending messages ");
+		for(int i= 0;i< 200;i++) {
+			kafkaTemplate.send("devs4j-topic","Message"+i);
+		}
+	}
+	
+	//imprime la metrica
+	@Scheduled(fixedDelay = 2000, initialDelay = 500)
+	public void messageCountMetric() {
+		double count =	meterRegistry.get("kafka.producer.record.send.total")
+		.functionCounter().count();
+		log.info("Count {} ",count);
+		/*for(Meter meter:meters) {
+			log.info("Metric {} ",meter.getId());
+		}*/
+	}
+	
+	
 }
