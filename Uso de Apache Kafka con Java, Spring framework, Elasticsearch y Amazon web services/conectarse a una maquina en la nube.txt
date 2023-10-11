@@ -1,4 +1,4 @@
-conectarse a una maquina en la nuve de aws
+conectarse a una maquina en la nube de aws
 
 despues de crear la maquina en ec2 y descargar la key
 se le da permiso a esa llave 
