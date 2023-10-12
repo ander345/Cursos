@@ -16,7 +16,7 @@ se le da permiso a esa llave
 
 posterior nos conectamos
 
-- ssh -i nombre-llave.pem ec2-user@nombre-del-servidor
+- ssh -i nombre-llave.pem ec2-user@nombre-del-servidor-que-seria-dns-publico-de-la-maquina
 
 - sudo yum update
 
@@ -25,6 +25,8 @@ posterior nos conectamos
 bajar kafka del sitio oficial, se puede hacer con amazon pero esta es otra forma
 - wget https:sitiode kafka.tgz
 - tar -xvf nombre-como-descargo-tgz
+
+entramos a la carperta
 
 ya con esto podemos usar kafka con los broker  que seria los boostrap server
 
