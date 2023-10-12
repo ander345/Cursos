@@ -22,7 +22,7 @@ posterior nos conectamos
 
 - sudo yum install java-1.8.0
 
-bajar kafka del sitio oficial, se puede hacer con amazon pero esta es otra forma
+bajar kafka del sitio oficial, se puede hacer con amazon pero esta es otra forma, para poder ejecutar los comandos del broker(servidor)
 - wget https:sitiode kafka.tgz
 - tar -xvf nombre-como-descargo-tgz
 
