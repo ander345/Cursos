@@ -1,0 +1,20 @@
+PARTE 1
+- ejecutar docker para crear broker de kafka
+docker-compose up -d
+- para ejecutar comandos puede entrar directamente en el contenedor para no descargar kafka
+docker exec -it Kafka-broker-1 bash
+
+- si no funciona usar el nombre del codigo del contenedor
+
+PARTE 2
+- crear topic
+kafka-topics --bootstrap-server localhost:9092 --create --topic topic-transaction --partitions 50 --replication-factor 1
+
+listar topics
+kafka-topics --bootstrap-server localhost:9092 --list
+
+- crear mensaje producer
+kafka-console-producer --bootstrap-server localhost:9092 --topic topic-transaction
+
+entrar al consumer desde la consola
+kafka-console-consumer --bootstrap-server Kafka-broker-1:9092 –topic topic-transaction  --from-beginning
