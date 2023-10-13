@@ -39,7 +39,7 @@ ya con esto seria funciona, el resto seria igual para crear topics y demas
 
 
 
-* SUBIR AL EC2 PROYECTO JAVA
+* SUBIR AL EC2 PROYECTO JAVA nota: se debe crear el topico manual para este ejemplo
 - ejecutar 
 mvn maven install 
 
