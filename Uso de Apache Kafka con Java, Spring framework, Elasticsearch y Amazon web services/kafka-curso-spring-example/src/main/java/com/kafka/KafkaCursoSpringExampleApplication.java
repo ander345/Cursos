@@ -1,8 +1,15 @@
 package com.kafka;
 
+import java.lang.StackWalker.Option;
 import java.util.List;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.elasticsearch.action.ActionListener;
+import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.index.IndexResponse;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.common.xcontent.XContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +35,8 @@ public class KafkaCursoSpringExampleApplication {
 	@Autowired
 	public ObjectMapper mapper;
 
+	@Autowired
+	private RestHighLevelClient client;
 	
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
@@ -39,10 +48,36 @@ public class KafkaCursoSpringExampleApplication {
 		for(ConsumerRecord<String, String> message:messages) {
 			//lo comentario mietras tanto para saber donde almacenarlo
 			//TransactionModel transactionModel = mapper.readValue(message.value(), TransactionModel.class);
-			log.info("Partition = {} , Offset = {} ,key = {} ,  Messasge = {}: ",
-								message.partition(), message.offset(), message.key(), message.value());
+			//log.info("Partition = {} , Offset = {} ,key = {} ,  Messasge = {}: ",
+				//				message.partition(), message.offset(), message.key(), message.value());
+			IndexRequest indexRequest = buildIndexRequest(String.format("%s-%s-%s",message.partition(), message.offset(), message.key())
+					,message.value());
+			
+			client.indexAsync(indexRequest,  RequestOptions.DEFAULT,new ActionListener<IndexResponse>() {
+				@Override
+				public void onResponse(IndexResponse response) {
+					log.debug("Successful");
+				}
+				
+				@Override
+				public void onFailure(Exception e) {
+				log.error("Error Store");
+				}
+				
+				
+				
+			});
 		}
 		log.info("Batch complete");
+		
+	}
+	private IndexRequest buildIndexRequest(String key, String value) {
+		IndexRequest request= new
+				IndexRequest("test-transactions");
+		
+		request.id(key);
+		request.source(value,XContentType.JSON);
+		return request;
 		
 	}
 	
@@ -50,12 +85,12 @@ public class KafkaCursoSpringExampleApplication {
 	public void SendMessage() throws JsonProcessingException {
 		// me genera mensajes automaticos para pruebas
 		Faker faker = new Faker();
-		for(int i=0; i <= 10000;i++) {
+		for(int i=0; i <= 10;i++) {
 			TransactionModel transationModel = new TransactionModel();
 			transationModel.setUsername(faker.name().username());
 			transationModel.setNombre(faker.name().firstName());
 			transationModel.setApellido(faker.name().lastName());
-			transationModel.setMonto(faker.number().randomDouble(4, 0,20000000 ));
+			transationModel.setMonto(faker.number().randomDouble(4, 0,20000 ));
 			kafkaTemplate.send("topic-transaction",transationModel.getUsername(),
 					mapper.writeValueAsString(transationModel));
 		}

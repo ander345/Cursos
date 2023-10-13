@@ -18,3 +18,7 @@ kafka-console-producer --bootstrap-server localhost:9092 --topic topic-transacti
 
 entrar al consumer desde la consola
 kafka-console-consumer --bootstrap-server Kafka-broker-1:9092 –topic topic-transaction  --from-beginning
+
+PARTE 3
+- consultar en postman lo que se agrega
+GET localhost:9200/test-transactions/_search
