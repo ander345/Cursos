@@ -44,7 +44,7 @@ ya con esto seria funciona, el resto seria igual para crear topics y demas
 mvn maven install 
 
 - una vez termina entrar la maquina ec2 desde consola y subir mi jar desde mi local a la maquina ec2
-scp -i nombre-llave.pem rutacompleta/nombre.jav ec2-user@nombre-del-servidor-que-seria-dns-publico-de-la-maquina:laruta-donde-dejare.jar
+scp -i nombre-llave.pem rutacompleta/nombre.jav ec2-user@nombre-del-servidor -que-seria-dns-publico-de-la-maquina:laruta-donde-dejare.jar
 
 - entro a la maquina y ejecuto
 java -jar nombre.jar
