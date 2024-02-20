@@ -1,0 +1,15 @@
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\bin\Debug\net5.0\DesignPatterns.Repository.deps.json
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\bin\Debug\net5.0\DesignPatterns.Repository.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\bin\Debug\net5.0\ref\DesignPatterns.Repository.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\bin\Debug\net5.0\DesignPatterns.Repository.pdb
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\DesignPatterns.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\DesignPatterns.Repository.AssemblyInfoInputs.cache
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\DesignPatterns.Repository.AssemblyInfo.cs
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\DesignPatterns.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\DesignPatterns.Repository.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\ref\DesignPatterns.Repository.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\DesignPatterns.Repository.pdb
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\bin\Debug\net5.0\DesignPatterns.Models.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\bin\Debug\net5.0\DesignPatterns.Models.pdb
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\DesignPatterns.Repository.csproj.CopyComplete
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Repository\obj\Debug\net5.0\DesignPatterns.Repository.csproj.AssemblyReference.cache

@@ -1,0 +1,14 @@
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\bin\Debug\net5.0\DesignPatterns.Models.deps.json
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\bin\Debug\net5.0\DesignPatterns.Models.runtimeconfig.json
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\bin\Debug\net5.0\DesignPatterns.Models.runtimeconfig.dev.json
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\bin\Debug\net5.0\DesignPatterns.Models.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\bin\Debug\net5.0\ref\DesignPatterns.Models.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\bin\Debug\net5.0\DesignPatterns.Models.pdb
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\obj\Debug\net5.0\DesignPatterns.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\obj\Debug\net5.0\DesignPatterns.Models.AssemblyInfoInputs.cache
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\obj\Debug\net5.0\DesignPatterns.Models.AssemblyInfo.cs
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\obj\Debug\net5.0\DesignPatterns.Models.csproj.CoreCompileInputs.cache
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\obj\Debug\net5.0\DesignPatterns.Models.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\obj\Debug\net5.0\ref\DesignPatterns.Models.dll
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\obj\Debug\net5.0\DesignPatterns.Models.pdb
+C:\Users\Bioxor\source\repos\DesignPattern\DesignPatterns.Models\obj\Debug\net5.0\DesignPatterns.Models.genruntimeconfig.cache

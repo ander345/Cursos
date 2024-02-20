@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "214u+I7z120pjeVW9+7qNYr7fActsnWxmsjSQUsoe/hbUaIucGaLablLvX8jk615BkmLLu57QlCOxq3xWVo8JA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\01061\\Anderson\\Cursos\\aprender-patrones-de-disenos-aplicados-en-asp-net\\DesignPattern\\Tools\\Tools.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\01061\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\01061\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\01061\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
