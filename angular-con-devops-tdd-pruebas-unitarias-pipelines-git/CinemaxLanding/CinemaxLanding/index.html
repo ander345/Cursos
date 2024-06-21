@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cinemax</title>
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&amp;subset=latin-ext" rel="stylesheet">
+
+  <style>
+    .container {
+      width: 85% !important;
+    }
+
+    .card-content .fa-heart{
+      color: palevioletred;
+    }
+
+    .card-content .fa-youtube{
+      color: #B71C1C;
+    }
+
+    .card-content .fa-bookmark{
+      color: orange;
+    }
+
+    .card-content .fa-language{
+      color: blue;
+    }
+
+    .card-content .fa-share-alt{
+      color:green;
+    }
+
+    .card-content .card-content a {
+      font-size: 18px;
+    }
+
+    /* label focus color */
+    .input-field input[type=text]:focus+label {
+      color: #000;
+    }
+
+    /* label underline focus color */
+    .input-field input[type=text]:focus {
+      border-bottom: 1px solid #000;
+      box-shadow: 0 1px 0 0 #000;
+    }
+
+    .row {
+      margin-bottom: 0;
+    }
+
+    .social {
+      height: 40px;
+      line-height: 37px !important;
+    }
+
+    .filter {
+      padding: 5px 55px;
+    }
+
+    .social i {
+      line-height: 37px !important;
+      height: 40px !important
+    }
+
+    .brand-logo {
+      padding: 10px !important;
+    }
+
+    .dropdown-content li>span {
+      color: #B71C1C;
+    }
+
+    .dropdown-content li>a,
+    .dropdown-content li>span {
+      background-color: #B71C1C;
+      color: white;
+
+    }
+
+    .carousel {
+      perspective: 900px !important;
+      height: 280px;
+    }
+  </style>
+
+</head>
+
+<body class="container grey darken-4">
+
+  <nav class=" black social">
+    <div class="nav-wrapper">
+
+      <ul class="left hide-on-med-and-down">
+        <li><a href="badges.html"><i class="fab fa-facebook-f "></i></a></li>
+        <li><a href="badges.html"><i class="fab fa-twitter "></i></a></li>
+        <li><a href="badges.html"><i class="fab fa-youtube "></i></a></li>
+        <li><a href="badges.html"><i class="fab fa-instagram "></i></a></li>
+      </ul>
+
+      <ul class="right hide-on-med-and-down ">
+        <li><a class="waves-effect waves-light btn-small grey darken-2">registro</a></li>
+        <li><a class="waves-effect waves-light btn-small red darken-4">Iniciar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Dropdown Structure -->
+  <ul id="ddCiudades" class="dropdown-content">
+    <li><a href="#!">Bogotá</a></li>
+    <li><a href="#!">Barranquilla</a></li>
+    <li><a href="#!">Cali</a></li>
+    <li><a href="#!">Medellín</a></li>
+  </ul>
+
+  <!-- Dropdown Structure -->
+  <ul id="ddCiudades2" class="dropdown-content">
+    <li><a href="#!">Bogotá</a></li>
+    <li><a href="#!">Barranquilla</a></li>
+    <li><a href="#!">Cali</a></li>
+    <li><a href="#!">Medellín</a></li>
+  </ul>
+
+  <nav class="red darken-4 ">
+    <div class="nav-wrapper z-depth-3 ">
+
+      <a href="#!" class="brand-logo left"><img class="responsive-img" src="imagenes/logo.png" width="230px"></a>
+      <ul class="right hide-on-med-and-down  ">
+        <li class="active"><a href="sass.html"><strong>INICIO</strong></a></li>
+        <li><a href="badges.html"><strong>CARTELERA</strong></a></li>
+        <li><a href="badges.html"><strong>PROMOCIONES</strong></a></li>
+        <!-- Dropdown Trigger -->
+        <li>
+          <a class="dropdown-trigger" href="#!" data-target="ddCiudades">
+            <strong>CIUDAD</strong>
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+      </ul>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <ul class="sidenav red darken-4" id="mobile-demo">
+    <li class="active"><a class="white-text" href="sass.html"><strong>INICIO</strong></a></li>
+    <li><a class="white-text" href="badges.html"><strong>CARTELERA</strong></a></li>
+    <li><a class="white-text" href="badges.html"><strong>PROMOCIONES</strong></a></li>
+
+    <!-- Dropdown Trigger -->
+    <li>
+      <a class="dropdown-trigger" href="#!" data-target="ddCiudades2">
+        <strong class="white-text">CIUDAD</strong>
+        <i class="material-icons right white-text">arrow_drop_down</i>
+      </a>
+    </li>
+  </ul>
+
+  <div class="row filter blue-grey lighten-5">
+
+    <h6 class="left-align"><strong>Compra tus entradas online</strong></h6>
+    <div class="input-field col s12 m3">
+      <select>
+        <option value="" disabled selected>Fecha</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+
+    <div class="input-field col s12 m4">
+      <select>
+        <option value="" disabled selected>Pelicula</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+
+    <div class="input-field col s12 m2">
+      <select>
+        <option value="" disabled selected>Formato</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+
+    <div class="input-field col s12 m2">
+      <select>
+        <option value="" disabled selected>Hora</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+    <div class="input-field col s12 m1">
+      <a class="waves-effect waves-light btn red darken-4">COMPRAR</a>
+    </div>
+  </div>
+
+  <div class="slider white">
+    <ul class="slides">
+      <li>
+        <img src="imagenes/banners/pacific-rim.jpg"> <!-- random image -->
+      </li>
+      <li>
+        <img src="imagenes/banners/Rampage.jpg"> <!-- random image -->
+      </li>
+      <li>
+        <img src="imagenes/banners/Justice_League.jpg"> <!-- random image -->
+      </li>
+      <li>
+        <img src="imagenes/banners/SpiderMan.jpg"> <!-- random image -->
+      </li>
+    </ul>
+  </div>
+
+  <div class="row white">
+    <div class="col m12">
+      <div class="row">
+        <h4>En Cartelera</h4>
+      </div>
+      <div class="row">
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/cowboys_aliens.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m3 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/wonder_woman.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/gernika.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/cowboys_aliens.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/BatmanVSSuperMan.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/guardians-galaxy.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="row blue-grey lighten-5">
+    <div class="col m12">
+      <div class="row">
+        <h4 class="center-align">Proximos Estrenos</h4>
+      </div>
+      <div class="row">
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/RogueOneP.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/what_if.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/stars.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/pacific-rim.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/the_mummy.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a> <a href="#"><i class="fab fa-youtube"></i></a> <a href="#"><i
+                class="fas fa-bookmark"></i></a> <a href="#"><i class="fas fa-language"></i></a> <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+        <div class="card col s12 m2 l2">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="imagenes/posters/venom.jpg">
+          </div>
+          <div class="card-content">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fas fa-bookmark"></i></a>
+            <a href="#"><i class="fas fa-language"></i></a>
+            <a href="#"><i class="fas fa-share-alt"></i></a>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row white promos">
+    <div class="carousel">
+      <a class="carousel-item" href="#one!"><img src="imagenes/promociones/1.png"></a>
+      <a class="carousel-item" href="#two!"><img src="imagenes/promociones/2.jpeg"></a>
+      <a class="carousel-item" href="#three!"><img src="imagenes/promociones/3.jpg"></a>
+      <a class="carousel-item" href="#four!"><img src="imagenes/promociones/4.png"></a>
+      <a class="carousel-item" href="#one!"><img src="imagenes/promociones/5.jpg"></a>
+      <a class="carousel-item" href="#two!"><img src="imagenes/promociones/6.jpg"></a>
+      <a class="carousel-item" href="#three!"><img src="imagenes/promociones/7.jpg"></a>
+      <a class="carousel-item" href="#four!"><img src="imagenes/promociones/8.jpg"></a>
+    </div>
+  </div>
+
+  <footer class="page-footer red darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col s6 m3 l3">
+          <span><strong>Clientes</strong></span>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Cartelera</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Proximamente</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Preventa</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Escribenos</a></li>
+          </ul>
+        </div>
+        <div class="col s6 m3 l3">
+          <span><strong>Visitantes</strong></span>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Nosotros</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Salas y Formatos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Terminos y Condiciones</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Trabaja con nosotros</a></li>
+          </ul>
+        </div>
+        <div class="col s12 m3 l3">
+          <span><strong>Proveedores</strong></span>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Contactenos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Encuesta</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Publicidad</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Eventos</a></li>
+          </ul>
+        </div>
+        <div class="col s12 m3 l3">
+          <span><strong>Consigue nuestra App</strong></span>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!"><img class="responsive-img" src="imagenes/redes/appStore.png"
+                  width="120px"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"><img class="responsive-img" src="imagenes/redes/googlePlay.png"
+                  width="120px"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        Copyright © 2018 Jhonatan Plata - Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+
+    $('select').formSelect();
+    $('.slider').slider();
+    $(".dropdown-trigger").dropdown();
+    $('.carousel').carousel();
+    $('.sidenav').sidenav();
+
+  </script>
+</body>
+
+
+</html>

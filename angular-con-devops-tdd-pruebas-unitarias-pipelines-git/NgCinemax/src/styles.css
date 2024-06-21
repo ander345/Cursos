@@ -1,0 +1,57 @@
+.social{
+    height: 40px;
+    line-height: 37px;
+}
+
+.social i{ 
+    height: 40px !important;
+    line-height: 37px !important;
+}
+
+.brand-logo{
+    padding: 5px !important;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span{
+    color: white;
+    background-color: #B71C1C;
+}
+
+.container{
+    width: 85% !important;
+}
+
+.filter{
+    padding: 5px 55px;
+}
+
+.row{
+    margin-bottom: 0;
+}
+
+.card-content a{
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.card-content .fa-heart{
+    color: palevioletred;
+}
+
+.card-content .fa-youtube{
+    color: red;
+}
+
+.card-content .fa-bookmark{
+    color: orange;
+}
+
+.card-content .fa-share-alt{
+    color: green;
+}
+
+.carousel{
+    perspective: 900px !important;
+    height: 280px;
+}

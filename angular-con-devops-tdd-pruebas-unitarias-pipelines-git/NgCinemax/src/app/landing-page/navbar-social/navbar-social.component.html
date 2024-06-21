@@ -1,0 +1,31 @@
+
+<nav class="black social">
+  <div class="nav-wrapper">
+    <ul class="left">
+      <li *ngFor="let red of socialNetworks">
+        <a href="{{red.url}}" target="_blank">
+          <i class="{{red.clase}}"></i>
+        </a>
+      </li>
+    </ul>
+    <!--Show in Desktop-->
+    <ul class="right hide-on-med-and-down">
+      <li><a class="waves-effect waves-light btn-small grey darken-2">Registro</a></li>
+      <li><a class="waves-effect waves-light btn-small red darken-4">Iniciar Sesión</a></li>
+    </ul>
+    <!--Show in Mobile-->
+    <ul class="right hide-on-large-only">
+        <li>
+          <a class="waves-effect waves-light btn-small btn-floating grey darken-2">
+           <i class="material-icons">person_add</i>   
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect waves-light btn-small btn-floating red darken-4">
+            <i class="material-icons">transfer_within_a_station</i>
+          </a>
+        </li>
+      </ul>
+    
+  </div>
+</nav>

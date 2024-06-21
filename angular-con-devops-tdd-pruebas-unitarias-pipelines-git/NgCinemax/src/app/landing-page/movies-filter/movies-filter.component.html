@@ -1,0 +1,34 @@
+<div class="row blue-grey lighten-4 filter">
+
+  <h6 class="left-align"><strong>Compra tus entradas online!</strong></h6>
+  <div class="input-field col s12 m3 l3">
+    <select class="browser-default" [(ngModel)]="formFilter.date">
+      <option value="" selected >Fecha</option>
+      <option value="{{fecha}}" *ngFor="let fecha of fechas">
+        {{fecha | date:'longDate'}}
+      </option>
+      
+    </select>
+  </div>
+  <div class="input-field col s12 m3 l3">
+      <select class="browser-default">
+        <option value="" selected >Pelicula</option>
+        <option [value]="pelicula.nombre" *ngFor="let pelicula of peliculas">{{pelicula.nombre}}</option>
+       
+      </select>
+    </div>
+    <div class="input-field col s12 m3 l3">
+        <select class="browser-default">
+          <option value="" selected >Formato</option>
+          <option [value]="formato" *ngFor="let formato of _landingS.formatos">{{formato}}</option>
+        
+        </select>
+      </div>
+      <div class="input-field col s12 m3 l3">
+          <select class="browser-default">
+            <option value="" selected >Hora</option>
+            <option [value]="hora" *ngFor="let hora of _landingS.horas">{{hora}}</option>
+            
+          </select>
+        </div>
+</div>

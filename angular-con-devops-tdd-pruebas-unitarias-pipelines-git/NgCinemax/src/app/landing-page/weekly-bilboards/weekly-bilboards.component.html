@@ -1,0 +1,31 @@
+<div class="row white">
+  <div class="col s12">
+    <div class="row">
+      <h4 class="center-align">Cartelera semanal</h4>
+    </div>
+    <div class="row">
+      <div class="col s12 m2 l2 card cartelera-semanal" 
+        *ngFor="let pelicula of peliculas | slice:0:6">
+        <div class="card-image waver-efect waves-blog waves-light">
+          <img class="activator" [src]="pelicula.imagen">
+        </div>
+        <div class="card-content">
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fas fa-language"></i></a>
+          <a href="#"><i class="fas fa-share-alt"></i></a>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">
+            {{pelicula.nombre}}
+            <i class="material-icons">close</i>
+          </span>
+          <p>
+            {{pelicula.descripcion}}
+          </p>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>
