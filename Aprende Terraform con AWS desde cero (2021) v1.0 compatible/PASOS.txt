@@ -1,0 +1,26 @@
+1- en aws crear Access keys de IAM, tanto el Access key como secret Access key 
+2- en aws cli en local damos:
+	* en la terminal e ingresamos credenciales: aws configure
+3- instalamos terraform 
+
+recursos terrraform : 
+recursos o módulos que podemos usar (con "required" puedo filtrar cuales son las que realmente sirven)
+https://registry.terraform.io/browse/modules
+ejemplo: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+
+los diferentes provider donde podemos despleggar
+https://registry.terraform.io/browse/providers
+
+
+- comandos: 
+terraform init
+terraform validate (nos dira si todo va bien)
+terraform plan (mostrara lo que se crearia)
+terraform apply (este crea la instancia en AWS)
+terraform show (estado actual de la infra)
+terraform destroy (destruye lo que esta en el fichero de configuracion y elimina la instancia)
+
+variables:
+https://developer.hashicorp.com/terraform/language/values/variables#variable-definition-precedence
+https://oracle-base.com/articles/misc/terraform-variables
+https://developer.hashicorp.com/terraform/language/expressions/type-constraints

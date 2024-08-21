@@ -1,0 +1,1 @@
+flavor = "t3.micro"
