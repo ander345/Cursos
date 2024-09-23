@@ -1,5 +1,6 @@
 package org.acme.quickstart;
 
+import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -12,9 +13,13 @@ public class GreetingResource {
     @ConfigProperty(name = "greeting.message")
     String msg;
 
+    @Inject
+    GreetingService greetingService;
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return msg;
+
+        return greetingService.toUpperCase(msg);
     }
 }
