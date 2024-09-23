@@ -14,7 +14,7 @@ public class InMemoryConfigSource implements ConfigSource {
     private Map<String, String> prop = new HashMap<>();
 
     public InMemoryConfigSource() {
-        this.prop.put("greeting.message", "Memory Hello");
+        this.prop.put("greeting.message", "Hola mundo");
     }
 
     @Override

@@ -5,8 +5,11 @@ import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.acme.quickstart.service.WorldClock;
+import org.acme.quickstart.service.WorldClockService;
 import org.acme.quickstart.validations.BeerExampleOwnValidations;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
 
 
@@ -18,9 +21,20 @@ public class GreetingResource {
     @ConfigProperty(name = "greeting.message")
     String msg;
 
-    @Inject
-    GreetingService greetingService;
+    //cambio por regla de sonar-----------------------
+    //@Inject
+    //GreetingService greetingService;
 
+    private final GreetingService greetingService;
+
+    @Inject
+    public GreetingResource(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+    //--------------------------------------------------------------
+
+
+    //1
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
@@ -35,6 +49,7 @@ public class GreetingResource {
         return new BeerExampleJson("Alhambra", 300);
     }
 
+    // 2
     @POST
     @Path("/beer")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -43,6 +58,7 @@ public class GreetingResource {
         return Response.ok().build();
     }
 
+    //3
     /**
      * Ejemplo con validacion propia
      */
@@ -52,5 +68,18 @@ public class GreetingResource {
     public Response createBeerExampleJsonValidate(@Valid BeerExampleOwnValidations beer) {
         System.out.println(beer);
         return Response.ok().build();
+    }
+
+    //4
+
+    @Inject
+    @RestClient
+    WorldClockService worldClockService;
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/nowservice")
+    public WorldClock getNow() {
+        return worldClockService.getNow();
     }
 }
