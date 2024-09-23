@@ -13,7 +13,7 @@ import org.jboss.logging.Logger;
 @Path("/hello")
 public class GreetingResource {
 
-    Logger logger = logger.getLogger(GreetingResource.class);
+    Logger logger = Logger.getLogger(GreetingResource.class);
 
     @ConfigProperty(name = "greeting.message")
     String msg;
