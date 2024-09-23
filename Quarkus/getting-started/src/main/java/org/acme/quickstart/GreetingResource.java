@@ -7,9 +7,13 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.acme.quickstart.validations.BeerExampleOwnValidations;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.jboss.logging.Logger;
+
 
 @Path("/hello")
 public class GreetingResource {
+
+    Logger logger = logger.getLogger(GreetingResource.class);
 
     @ConfigProperty(name = "greeting.message")
     String msg;
@@ -35,7 +39,7 @@ public class GreetingResource {
     @Path("/beer")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createBeerExampleJson(@Valid BeerExampleJson beerExampleJson) {
-        System.out.println(beerExampleJson);
+        logger.debug(beerExampleJson);
         return Response.ok().build();
     }
 
