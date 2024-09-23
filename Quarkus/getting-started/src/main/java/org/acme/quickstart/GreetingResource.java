@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.acme.quickstart.validations.BeerExampleOwnValidations;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 @Path("/hello")
@@ -35,6 +36,17 @@ public class GreetingResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createBeerExampleJson(@Valid BeerExampleJson beerExampleJson) {
         System.out.println(beerExampleJson);
+        return Response.ok().build();
+    }
+
+    /**
+     * Ejemplo con validacion propia
+     */
+    @POST
+    @Path("/beer/validate")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createBeerExampleJsonValidate(@Valid BeerExampleOwnValidations beer) {
+        System.out.println(beer);
         return Response.ok().build();
     }
 }

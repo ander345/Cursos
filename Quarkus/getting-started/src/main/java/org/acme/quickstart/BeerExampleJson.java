@@ -12,6 +12,7 @@ public class BeerExampleJson {
     @Min(100)
     private int capacity;
 
+
     public BeerExampleJson() {
     }
 
