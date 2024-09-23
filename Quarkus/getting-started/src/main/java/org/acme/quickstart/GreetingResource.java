@@ -6,6 +6,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.acme.quickstart.service.WorldClock;
+import org.acme.quickstart.service.WorldClockHeaders;
 import org.acme.quickstart.service.WorldClockService;
 import org.acme.quickstart.validations.BeerExampleOwnValidations;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
@@ -80,6 +81,7 @@ public class GreetingResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/nowservice")
     public WorldClock getNow() {
-        return worldClockService.getNow();
+        WorldClockHeaders worldClockHeaders = new WorldClockHeaders();
+        return worldClockService.getNow(worldClockHeaders);
     }
 }
