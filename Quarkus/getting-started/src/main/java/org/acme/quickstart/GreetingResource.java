@@ -3,6 +3,7 @@ package org.acme.quickstart;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.acme.quickstart.service.WorldClock;
@@ -81,7 +82,14 @@ public class GreetingResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/nowservice")
     public WorldClock getNow() {
-        WorldClockHeaders worldClockHeaders = new WorldClockHeaders();
-        return worldClockService.getNow(worldClockHeaders);
+        //opcion 1
+        //WorldClockHeaders worldClockHeaders = new WorldClockHeaders();
+        //return worldClockService.getNow(worldClockHeaders);
+
+        //opcion 2 con Client rest Rest
+        return ClientBuilder.newClient().target("http://worldclockapi.com")
+                .path("/json/cet/now")
+                .request(MediaType.APPLICATION_JSON)
+                .get(WorldClock.class);
     }
 }
