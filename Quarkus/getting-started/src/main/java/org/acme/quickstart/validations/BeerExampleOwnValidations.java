@@ -1,7 +1,7 @@
 package org.acme.quickstart.validations;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.smallrye.common.constraint.NotNull;
-import jakarta.json.bind.annotation.JsonbDateFormat;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
@@ -16,7 +16,7 @@ public class BeerExampleOwnValidations {
     private int capacity;
 
     @NotExpired
-    @JsonbDateFormat("yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate expired;
 
 

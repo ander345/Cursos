@@ -1,6 +1,7 @@
 package org.acme.quickstart;
 
 import io.quarkus.test.junit.QuarkusTest;
+import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -15,6 +16,15 @@ class GreetingResourceTest {
           .then()
              .statusCode(200)
              .body(is("HOLA MUNDO"));
+    }
+
+    @Test
+    void testMockEndpoint() {
+        given()
+                .when().get("/hello/mock")
+                .then()
+                .statusCode(200)
+                .body(CoreMatchers.is("20"));
     }
 
 }

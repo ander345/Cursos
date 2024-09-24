@@ -6,6 +6,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.acme.quickstart.service.RealExpensive;
 import org.acme.quickstart.service.WorldClock;
 import org.acme.quickstart.service.WorldClockHeaders;
 import org.acme.quickstart.service.WorldClockService;
@@ -91,5 +92,17 @@ public class GreetingResource {
                 .path("/json/cet/now")
                 .request(MediaType.APPLICATION_JSON)
                 .get(WorldClock.class);
+    }
+
+    //5 para test mock
+
+    @Inject
+    RealExpensive realExpensive;
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/mock")
+    public int mock(){
+        return realExpensive.calculate();
     }
 }
