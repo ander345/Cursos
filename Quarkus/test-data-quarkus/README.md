@@ -80,3 +80,9 @@ Other
 ```shell
 docker run -d --rm --name mariadb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=developer -p 3306:3306 mariadb
 ```
+
+para ver de h2
+    
+    ```shell
+cat test.mv.db | strings
+    ```

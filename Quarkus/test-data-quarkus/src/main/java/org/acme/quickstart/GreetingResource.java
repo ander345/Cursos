@@ -41,7 +41,7 @@ public class GreetingResource {
     }*/
 
     //con panache
-    @GET
+    /*@GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public DeveloperPanache getDev(@PathParam("id") Long id) {
@@ -53,7 +53,7 @@ public class GreetingResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<DeveloperPanache> getAllDevs() {
         return DeveloperPanache.findAll().list();
-    }
+    }*/
 
     /*@GET
     @Path("/name/{name}")
@@ -62,7 +62,7 @@ public class GreetingResource {
         return DeveloperPanache.find("name", name).firstResult();
     }*/
 
-    @GET
+    /*@GET
     @Path("/{name}/{age}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<DeveloperPanache> findByNameAndAge(@NotNull @PathParam("name") String name, @NotNull @PathParam("age") Integer age) {
@@ -70,7 +70,7 @@ public class GreetingResource {
     }
 
 
-    /*@POST
+    @POST
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
     public Response create(DeveloperPanache developer) {
