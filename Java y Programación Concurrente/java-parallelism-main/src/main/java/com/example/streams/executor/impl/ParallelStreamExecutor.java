@@ -44,6 +44,7 @@ public class ParallelStreamExecutor implements CustomExecutor {
                     Object id = commands.get(command);
                     return command.apply(id);
                 })
+                //.map(command -> command.apply(commands.get(command))) //en teoria hace lo mismo que la linea de arriba
                 .toList();
 
         Customer customer = (Customer) results.get(0);
@@ -69,6 +70,7 @@ public class ParallelStreamExecutor implements CustomExecutor {
 
         List<Object> results = Stream.of(customerCommand, orderCommand, productCommand)
                 .parallel()
+                // la extraccion de la funcion y ejecucion de la misma
                 .map(command -> command.apply(commands.get(command)))
                 .toList();
 
