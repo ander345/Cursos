@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<com.openwebinars.rest-08_ControladorRegistroCompleto>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.openwebinars.rest.Application",
+            "projectName": "com.openwebinars.rest-08_ControladorRegistroCompleto",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

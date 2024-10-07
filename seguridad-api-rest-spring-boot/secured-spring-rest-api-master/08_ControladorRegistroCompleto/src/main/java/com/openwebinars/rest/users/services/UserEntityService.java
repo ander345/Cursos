@@ -38,6 +38,7 @@ public class UserEntityService extends BaseService<UserEntity, Long, UserEntityR
 		
 		userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
 		userEntity.setRoles(Stream.of(UserRole.USER).collect(Collectors.toSet()));
+		//Set.of(UserRole.USER); -> Java 9
 		return save(userEntity);
 	}
 	

@@ -2,6 +2,7 @@ package com.openwebinars.rest.users.controllers;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,5 +29,19 @@ public class UserController {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
 		}
 	}
+
+	// This is the original method of course, but it is not used in the course
+	// because save method is necesary long id but we send string id
+	/*@PostMapping("/")
+	public ResponseEntity<UserEntity> nuevoUsuarioResponse(@RequestBody UserEntity newUser) {
+		try {
+			return ResponseEntity
+			.status(HttpStatus.CREATED)
+			.body(userEntityService.save(newUser));
+			
+		} catch (DataIntegrityViolationException ex) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage());
+		}
+	}*/
 
 }
