@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	install DirBuster-1.0-RC1.sh $(CURDIR)/debian/dirbuster/usr/bin/dirbuster
+
+override_dh_strip_nondeterminism:
