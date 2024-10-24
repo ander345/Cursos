@@ -1,0 +1,30 @@
+---
+
+# jenkins variables
+project_name: docker-wireshark
+external_type: alpine_repo
+release_type: stable
+release_tag: latest
+ls_branch: master
+build_armhf: false
+repo_vars:
+  - BUILD_VERSION_ARG = 'WIRESHARK_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-wireshark'
+  - CONTAINER_NAME = 'wireshark'
+  - DOCKERHUB_IMAGE = 'linuxserver/wireshark'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/wireshark'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/wireshark'
+  - DIST_IMAGE = 'alpine'
+  - DIST_TAG = '3.20'
+  - DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.20/community/'
+  - DIST_REPO_PACKAGES = 'wireshark'
+  - MULTIARCH = 'true'
+  - CI = 'true'
+  - CI_WEB = 'true'
+  - CI_PORT = '3000'
+  - CI_SSL = 'false'
+  - CI_DELAY = '120'
+  - CI_DOCKERENV = 'TZ=US/Pacific'
+  - CI_AUTH = 'user:password'
+  - CI_WEBPATH = ''
